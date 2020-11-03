@@ -1,5 +1,8 @@
 language: java
 script:
   - mvn clean verify --file ./simple-api/pom.xml
+  - docker login -u $DOCKER_LOGIN -p $DOCKER_PASSWORD
+  - docker-compose build
+  - docker-compose push
 
 
