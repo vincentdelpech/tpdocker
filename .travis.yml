@@ -4,7 +4,7 @@ script:
   - docker login -u $DOCKER_LOGIN -p $DOCKER_PASSWORD
   - docker build -t sethyne/correction-tp1-master_database database
   - docker build -t sethyne/correction-tp1-master_httpd httpd
-  - docker build -t sethyne/correction-tp1-master_backend simple api
+  - docker build -t sethyne/correction-tp1-master_backend simple-api
   - docker push sethyne/correction-tp1-master_database
   - docker push sethyne/correction-tp1-master_httpd
   - docker push sethyne/correction-tp1-master_backend
