@@ -6,9 +6,9 @@ services:
 jobs:
   include:
     - stage: test
-    script:
-      - mvn clean verify --file ./simple-api/pom.xml
-      - mvn clean verify --file ./simple-api/pom.xml verify org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.projectKey=vincentdelpech_tpdocker
+      script:
+        - mvn clean verify --file ./simple-api/pom.xml
+        - mvn clean verify --file ./simple-api/pom.xml verify org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.projectKey=vincentdelpech_tpdocker
 
     - stage: deploy
       script:
