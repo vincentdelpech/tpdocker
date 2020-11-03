@@ -2,8 +2,11 @@ language: java
 script:
   - mvn clean verify --file ./simple-api/pom.xml
   - docker login -u $DOCKER_LOGIN -p $DOCKER_PASSWORD
-  - docker-push sethyne/correction-tp1-master_database
-  - docker-push sethyne/correction-tp1-master_httpd
-  - docker-push sethyne/correction-tp1-master_backend
+  - docker-compose build
+  - docker-compose push
+
+cache:
+  directories:
+    - $Home/.m2
 
 
