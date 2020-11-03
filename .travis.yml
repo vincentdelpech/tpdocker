@@ -7,7 +7,7 @@ script:
   - docker build -t sethyne/devops:correction-tp1-master_backend simple-api
   - docker push sethyne/devops:correction-tp1-master_database
   - docker push sethyne/devops:correction-tp1-master_httpd
-  - docker push sethyne/correction-tp1-master_backend
+  - docker push sethyne/devops:correction-tp1-master_backend
 
 cache:
   directories:
