@@ -1,0 +1,10 @@
+- name: Run FRONT
+  docker_container:
+    name: front
+    image: sethyne/devops:correction-tp1-master_httpd
+    ports:
+      - 80:80
+    networks:
+      - name: vincent
+
+
