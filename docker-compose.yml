@@ -26,6 +26,16 @@ services:
       - app-network
 
 
+  front:
+    container_name:  front
+    build: ./devops-front-main
+    ports:
+    - "80:80"
+    networks:
+      - app-network
+
+
+
 volumes:
   my_db_volume:
     driver: local
