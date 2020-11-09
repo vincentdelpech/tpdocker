@@ -3,9 +3,9 @@
   become: yes
 
   roles:
-    - roles/docker
-    - roles/network
-    - roles/database
-    - roles/app
-    - roles/proxy
+    - docker
+    - network
+    - database
+    - app
+    - proxy
 
