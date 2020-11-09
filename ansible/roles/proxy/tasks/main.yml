@@ -4,6 +4,7 @@
     image: sethyne/devops:correction-tp1-master_httpd
     ports:
       - 80:80
+    pull: true
     networks:
       - name: vincent
 
