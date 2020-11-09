@@ -1,0 +1,12 @@
+- name: Run DATABASE
+  docker_container:
+    name: database
+    image: sethyne/devops:correction-tp1-master_database
+    env:
+      POSTGRES_PASSWORD: pwd
+      POSTGRES_USER: usr
+      POSTGRES_DB: db
+    networks:
+      - name: vincent
+
+

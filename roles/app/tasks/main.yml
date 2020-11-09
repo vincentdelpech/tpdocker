@@ -1,0 +1,10 @@
+- name: Run BACKEND
+  docker_container:
+    name: backend
+    image: sethyne/devops:correction-tp1-master_backend
+    env:
+      username: usr
+      password: pwd
+    networks:
+      - name: vincent
+
