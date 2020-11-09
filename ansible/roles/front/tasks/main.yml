@@ -2,8 +2,6 @@
   docker_container:
     name: front
     image: sethyne/devops:front
-    ports:
-      - 80
     pull: true
     networks:
       - name: vincent
