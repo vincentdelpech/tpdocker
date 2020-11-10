@@ -6,5 +6,5 @@
       username: usr
       password: pwd
     networks:
-      - name: vincent
+      - name: app-network
 

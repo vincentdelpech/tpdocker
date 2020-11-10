@@ -6,6 +6,6 @@
       - 80:80
     pull: true
     networks:
-      - name: vincent
+      - name: app-network
 
 

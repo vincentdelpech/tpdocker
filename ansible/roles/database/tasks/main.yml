@@ -7,6 +7,6 @@
       POSTGRES_USER: usr
       POSTGRES_DB: db
     networks:
-      - name: vincent
+      - name: app-network
 
 

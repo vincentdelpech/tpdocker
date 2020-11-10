@@ -4,6 +4,6 @@
     image: sethyne/devops:front
     pull: true
     networks:
-      - name: vincent
+      - name: app-network
 
 
