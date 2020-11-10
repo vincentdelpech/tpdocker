@@ -1,9 +1,0 @@
-- name: Run FRONT
-  docker_container:
-    name: front
-    image: sethyne/devops:front
-    pull: true
-    networks:
-      - name: app-network
-
-
