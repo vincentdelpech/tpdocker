@@ -1,5 +1,34 @@
 language: java
-script:
-  - mvn clean verify --file ./simple-api/pom.xml
 
+services:
+  - docker
+
+jobs:
+  include:
+    - stage: test
+      script:
+        - mvn clean verify --file ./simple-api/pom.xml
+        - mvn clean verify --file ./simple-api/pom.xml verify org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.projectKey=vincentdelpech_tpdocker
+
+    - stage: deploy
+      script:
+        - docker login -u $DOCKER_LOGIN -p $DOCKER_PASSWORD
+        - docker build -t sethyne/devops:correction-tp1-master_database database
+        - docker build -t sethyne/devops:correction-tp1-master_httpd httpd
+        - docker build -t sethyne/devops:correction-tp1-master_backend simple-api
+        - docker build -t sethyne/devops:front front
+        - docker push sethyne/devops:correction-tp1-master_database
+        - docker push sethyne/devops:correction-tp1-master_httpd
+        - docker push sethyne/devops:correction-tp1-master_backend
+        - docker push sethyne/devops:front
+
+
+cache:
+  directories:
+    - $Home/.m2
+
+addons:
+  sonarcloud:
+    organization: "vincentdelpech"
+    token: "$SONARCLOUD_TOKEN"
 

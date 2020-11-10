@@ -1,0 +1,11 @@
+- name: Run HTTPD
+  docker_container:
+    name: httpd
+    image: sethyne/devops:correction-tp1-master_httpd
+    ports:
+      - 80:80
+    pull: true
+    networks:
+      - name: app-network
+
+
